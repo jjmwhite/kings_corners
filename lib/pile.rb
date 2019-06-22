@@ -1,16 +1,13 @@
 class Pile
-
   attr_reader :bottom_card, :top_card
   
-  def initialize(bottom_card)
+  def initialize(bottom_card = nil)
     @bottom_card = bottom_card
   end
 
   def top_card
     @top_card ||= @bottom_card
   end
-
-  #if 
 
   def valid_play?(card)
     raise "Kings must be placed on King piles" if card.value == :king
@@ -21,23 +18,22 @@ class Pile
     @top_card = card if valid_play?(card)
   end
 
-  
+
 end
 
 class KingPile < Pile
   
-  def initialize(bottom_card = nil)
-    raise "Card must be a King" unless bottom_card.value == :King
-    super(bottom_card = nil)
-  end
+  # def initialize(bottom_card = nil)
+  #   super
+  # end
 
-  def play_card
+  def play_card(card)
     
   end
 
   def valid_play?(card)
     if @bottom_card.nil?
-      raise "Only Kings may be placed on King piles" card.value != :king
+      raise "Only Kings may be placed on King piles" if card.value != :king
       return true
     else 
       return true if @top_card.step_down == card && card.color != @top_card.color
@@ -45,12 +41,6 @@ class KingPile < Pile
     false 
   end
 
-  def play_card(card)
-    if 
-    @bottom_card = card if valid_king_play?(card)
-      
-    end
-  end
 
 
 end

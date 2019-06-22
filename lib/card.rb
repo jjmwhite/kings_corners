@@ -23,12 +23,12 @@ class Card
   }
 
   # make an array of the suits that can be called on Card
-  self.suits
+  def self.suits
     SUIT_STRINGS.keys
   end
 
   # make an array of the values that can be called on Card
-  self.values
+  def self.values
     VALUE_STRINGS.keys
   end
 

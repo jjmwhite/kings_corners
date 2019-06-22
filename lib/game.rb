@@ -1,3 +1,8 @@
+require_relative "card"
+require_relative "deck"
+require_relative "hand"
+require_relative "pile"
+
 class Game
 
   @@king_piles = [
@@ -18,16 +23,16 @@ class Game
     @deck = Deck.new
   end
 
-  def play_turn(hand)
-    until #no valid moves left
-      hand.each do |card|
-        if card.value == :king
-          self.king_piles.each do |pile|
-            if pile.bottom_card.nil?
+  # def play_turn(hand)
+    # until #no valid moves left
+    #   hand.each do |card|
+    #     if card.value == :king
+    #       self.king_piles.each do |pile|
+    #         if pile.bottom_card.nil?
               
 
-    end
-  end
+    # end
+  # end
 
 
 end

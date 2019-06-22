@@ -1,3 +1,4 @@
+require_relative "card"
 class Deck
 
   attr_reader :cards
@@ -14,7 +15,7 @@ class Deck
     deck
   end
 
-  def initialize(deck)
+  def initialize(deck = Deck.deck_assembly)
     @cards = deck.shuffle!
 
   end
@@ -25,7 +26,7 @@ class Deck
 
   #draw from front
   def draw(n)
-    raise "not eough cards" if count < n
+    raise "not enough cards" if count < n
     @cards.shift(n)
   end
 
